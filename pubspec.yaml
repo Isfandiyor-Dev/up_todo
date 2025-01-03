@@ -1,0 +1,78 @@
+name: up_todo
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  animated_bottom_navigation_bar: ^1.3.3
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.6
+  flutter_svg: ^2.0.16
+  gap: ^3.0.1
+  get_it: ^8.0.3
+  go_router: ^14.6.2
+  shared_preferences: ^2.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_gen_runner: ^5.8.0
+  build_runner: ^2.4.13
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/svg/light/
+    - assets/icons/svg/dark/
+    - assets/icons/svg/common/
+    - assets/images/png/
+    - assets/images/svg/dark/
+    - assets/images/svg/light/
+    - assets/images/svg/common/
+    - assets/logos/svg/
+
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/lato/Lato-Black.ttf
+          weight: 900
+        - asset: assets/fonts/lato/Lato-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/lato/Lato-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/lato/Lato-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/lato/Lato-Italic.ttf
+          style: italic
+        - asset: assets/fonts/lato/Lato-Light.ttf
+          weight: 300
+        - asset: assets/fonts/lato/Lato-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/lato/Lato-Regular.ttf
+        - asset: assets/fonts/lato/Lato-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/lato/Lato-ThinItalic.ttf
+          weight: 100
+          style: italic
+          
+    - family: DMSans
+      fonts:
+        - asset: assets/fonts/DMSans/DMSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/DMSans/DMSans-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/DMSans/DMSans-Regular.ttf
+          weight: 400
+# platform:
+#   android: 
+#   ios: 
+        
