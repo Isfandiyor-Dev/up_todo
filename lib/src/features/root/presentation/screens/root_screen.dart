@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:up_todo/src/core/extensions/app_size_extension.dart';
-import 'package:up_todo/src/core/extensions/bottom_nav_bar_items_extension.dart';
-
+import 'package:up_todo/src/core/extensions/context/app_media_query_size_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
+import 'package:up_todo/src/core/extensions/context/nav_bar_items_extension.dart';
 // import '../../../home/presentation/widgets/add_task/add_task_bottom_sheet.dart';
 
 class RootScreen extends StatefulWidget {
@@ -43,7 +43,9 @@ class _RootScreenState extends State<RootScreen> {
       bottomNavigationBar: AnimatedBottomNavigationBar.builder(
         itemCount: 4,
         height: context.getHeight(0.1),
-        backgroundColor: const Color(0xff363636),
+        // backgroundColor: const Color(0xff363636),
+        backgroundColor:
+            Theme.of(context).bottomNavigationBarTheme.backgroundColor,
         tabBuilder: (index, isActive) {
           return Column(
             mainAxisSize: MainAxisSize.min,
@@ -59,12 +61,10 @@ class _RootScreenState extends State<RootScreen> {
               const Gap(5),
               Text(
                 context.bottomNavBarItems[index].label,
-                style: TextStyle(
-                  fontSize: 12,
+                style: context.textTheme.labelSmall?.copyWith(
                   letterSpacing: 0.7,
-                  fontWeight: isActive ? FontWeight.w500 : FontWeight.normal,
-                  color:
-                      isActive ? Colors.white.withOpacity(0.87) : Colors.white,
+                  fontWeight: isActive ? FontWeight.w600 : FontWeight.normal,
+                  color: isActive ? context.textTheme.labelSmall?.color : null,
                 ),
               ),
             ],

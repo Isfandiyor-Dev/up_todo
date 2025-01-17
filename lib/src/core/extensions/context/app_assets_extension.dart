@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../themes/theme_extensions/app_assets.dart';
+import '../../themes/theme_extensions/app_assets.dart';
 
-extension AppIconsExtension on BuildContext {
+extension AppAssetsExtension on BuildContext {
   AppAssets get appAssets => Theme.of(this).extension<AppAssets>()!;
 }

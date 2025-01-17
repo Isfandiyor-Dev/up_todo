@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 import 'package:up_todo/gen/assets.gen.dart';
+import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
 
 class NoTasks extends StatelessWidget {
   const NoTasks({super.key});
@@ -11,8 +13,7 @@ class NoTasks extends StatelessWidget {
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize
-              .min, // Added to allow the content to fit within the available space
+          mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             SizedBox(
@@ -23,26 +24,16 @@ class NoTasks extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(
-                height: 10), // Added to create spacing between the elements
-            const Text(
+            const Gap(10),
+            Text(
               'What do you want to do today?',
-              style: TextStyle(
-                fontSize: 17,
-                fontFamily: 'Lato',
-              ),
+              style: context.textTheme.titleMedium,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-                height:
-                    10), // Added to create spacing between the text elements
-            const Text(
+            const Gap(10),
+            Text(
               'Tap + to add your tasks',
-              style: TextStyle(
-                fontSize: 15,
-                height: 2.5,
-                fontFamily: 'Lato',
-              ),
+              style: context.textTheme.bodyLarge?.copyWith(height: 2.5),
               textAlign: TextAlign.center,
             ),
           ],

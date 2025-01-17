@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:up_todo/src/core/extensions/context_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_assets_extension.dart';
 
-import '../models/nav_bar_info.dart';
+import '../../models/nav_bar_info.dart';
 
 extension BottomNavBarItems on BuildContext {
   List<BottomNavBarItem> get bottomNavBarItems => [

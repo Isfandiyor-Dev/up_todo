@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:up_todo/gen/assets.gen.dart';
+import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -40,12 +41,9 @@ class _IntroScreenState extends State<IntroScreen> {
               width: 70,
               height: 70,
             ),
-            const Text(
+            Text(
               'UpTodo',
-              style: TextStyle(
-                fontSize: 30,
-                fontFamily: 'Lato',
-                fontWeight: FontWeight.bold,
+              style: context.textTheme.displaySmall?.copyWith(
                 height: 3,
               ),
             )

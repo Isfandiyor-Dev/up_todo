@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:up_todo/gen/assets.gen.dart';
+import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
 import '../widgets/components/no_tasks.dart';
 import '../widgets/drawer/my_drawer.dart';
 
@@ -23,9 +24,9 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Home",
-          style: TextStyle(fontSize: 20),
+          style: context.textTheme.headlineSmall,
         ),
         actions: [
           Padding(

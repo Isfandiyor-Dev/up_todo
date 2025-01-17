@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:up_todo/src/core/bloc/theme_cubit/theme_state.dart';
 import 'package:up_todo/src/core/enums/app_theme.dart';
-import 'package:up_todo/src/core/extensions/string_extension.dart';
+import 'package:up_todo/src/core/extensions/string/string_extension.dart';
 import 'package:up_todo/src/core/themes/app_themes/theme_dark.dart';
 import 'package:up_todo/src/core/themes/app_themes/theme_light.dart';
 

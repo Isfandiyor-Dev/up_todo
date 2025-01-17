@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:up_todo/src/core/extensions/context_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_assets_extension.dart';
 
 import 'priority_dialog.dart';
 

@@ -5,8 +5,9 @@ import 'package:gap/gap.dart';
 import 'package:up_todo/src/core/bloc/theme_cubit/theme_cubit.dart';
 import 'package:up_todo/src/core/bloc/theme_cubit/theme_state.dart';
 import 'package:up_todo/src/core/enums/app_theme.dart';
-import 'package:up_todo/src/core/extensions/app_size_extension.dart';
-import 'package:up_todo/src/core/extensions/context_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_media_query_size_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_assets_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -15,14 +16,11 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           "Settings",
-          style: TextStyle(
-            // color: Colors.white.withOpacity(0.87),
-            fontFamily: "Lato",
+          style: context.textTheme.headlineSmall?.copyWith(
             height: 2,
             letterSpacing: -0.5,
-            fontSize: 20,
           ),
         ),
         centerTitle: true,
@@ -33,11 +31,10 @@ class SettingsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "Settings",
-                style: TextStyle(
-                  color: Color(0xffAFAFAF),
-                  fontFamily: "Lato",
+                style: context.textTheme.labelMedium?.copyWith(
+                  color: const Color(0xffAFAFAF),
                   height: 1.5,
                   fontSize: 14,
                 ),
@@ -50,27 +47,22 @@ class SettingsScreen extends StatelessWidget {
                   width: 30,
                   height: 30,
                 ),
-                title: const Text(
+                title: Text(
                   "Theme mode",
-                  style: TextStyle(
-                    // color: Colors.white.withOpacity(0.87),
-                    fontFamily: "Lato",
-                    fontSize: 16,
-                  ),
+                  style: context.textTheme.labelLarge,
                 ),
                 trailing: SizedBox(
-                  width: context.getWidth(0.3),
+                  width: context.getWidth(0.25),
                   child: DropdownButton(
                     isExpanded: true,
                     underline: const SizedBox.shrink(),
                     value: state.currentThemeEnum,
-                    icon: const Icon(Icons.arrow_drop_down_rounded),
-                    borderRadius: BorderRadius.circular(20),
-                    style: const TextStyle(
-                      // color: Colors.white.withOpacity(0.87),
-                      fontFamily: "Lato",
-                      fontSize: 16,
+                    icon: const Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Icon(Icons.arrow_drop_down_rounded),
                     ),
+                    borderRadius: BorderRadius.circular(20),
+                    style: context.textTheme.labelLarge,
                     items: [
                       DropdownMenuItem(
                         value: AppTheme.DARK,

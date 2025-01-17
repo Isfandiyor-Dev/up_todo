@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:up_todo/gen/assets.gen.dart';
-import 'package:up_todo/src/core/extensions/app_size_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_media_query_size_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
 
 class FirstOnboard extends StatelessWidget {
   const FirstOnboard({super.key});
@@ -23,24 +24,20 @@ class FirstOnboard extends StatelessWidget {
             children: [
               Text(
                 'Manage your tasks',
-                style: TextStyle(
-                  fontSize: context.isSmallWidth ? context.getWidth(0.055) : 25,
-                  fontFamily: 'Lato',
-                  fontWeight: FontWeight.bold,
+                style: context.textTheme.headlineLarge?.copyWith(
+                  fontSize: context.isSmallWidth ? context.getWidth(0.08) : 25,
                   letterSpacing: 1,
-                  height: 4,
+                  height: 3,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70),
+                padding: const EdgeInsets.symmetric(horizontal: 60),
                 child: Text(
                   'You can easily manage all of your daily tasks in DoMe for free',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: context.textTheme.bodyLarge?.copyWith(
                     fontSize:
-                        context.isSmallWidth ? context.getWidth(0.035) : 15,
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.bold,
+                        context.isSmallWidth ? context.getWidth(0.035) : 16,
                   ),
                 ),
               ),

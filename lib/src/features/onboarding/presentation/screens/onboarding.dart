@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:up_todo/src/core/extensions/app_size_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_media_query_size_extension.dart';
+import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
 import 'package:up_todo/src/features/onboarding/presentation/bloc/onboarding_cubit.dart';
 import 'package:up_todo/src/features/onboarding/presentation/bloc/onboarding_state.dart';
 
@@ -26,8 +27,8 @@ class _OnboardingState extends State<Onboarding> {
       height: isCurrent ? 5 : 4,
       decoration: BoxDecoration(
         color: isCurrent
-            ? const Color.fromARGB(250, 255, 255, 255)
-            : const Color(0xFFA2A2A2),
+            ? Theme.of(context).colorScheme.primary
+            : Theme.of(context).colorScheme.secondaryFixed,
         borderRadius: BorderRadius.circular(60),
       ),
     );
@@ -57,11 +58,9 @@ class _OnboardingState extends State<Onboarding> {
                 },
                 child: Text(
                   'SKIP',
-                  style: TextStyle(
+                  style: context.textTheme.labelLarge!.copyWith(
                     fontSize:
                         context.isSmallWidth ? context.getWidth(0.04) : 18,
-                    fontFamily: 'Lato',
-                    color: const Color.fromARGB(112, 255, 255, 255),
                   ),
                 ),
               ),
@@ -94,11 +93,9 @@ class _OnboardingState extends State<Onboarding> {
                 },
                 child: Text(
                   'BACK',
-                  style: TextStyle(
+                  style: context.textTheme.labelLarge!.copyWith(
                     fontSize:
                         context.isSmallWidth ? context.getWidth(0.04) : 18,
-                    fontFamily: 'Lato',
-                    color: const Color.fromARGB(112, 255, 255, 255),
                   ),
                 ),
               ),
@@ -128,12 +125,10 @@ class _OnboardingState extends State<Onboarding> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
                         state.currentPage < 2 ? 'NEXT' : 'GET STARTED',
-                        style: TextStyle(
-                          color: Colors.white,
+                        style: context.textTheme.labelLarge!.copyWith(
                           fontSize: context.isSmallWidth
                               ? context.getWidth(0.04)
                               : 18,
-                          fontFamily: 'Lato',
                         ),
                       ),
                     ),
