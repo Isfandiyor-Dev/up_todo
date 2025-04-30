@@ -17,8 +17,8 @@ class NoTasks extends StatelessWidget {
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             SizedBox(
-              width: 220,
-              height: 220,
+              width: 200,
+              height: 200,
               child: SvgPicture.asset(
                 Assets.images.svg.common.noTasks,
                 fit: BoxFit.cover,
@@ -27,13 +27,13 @@ class NoTasks extends StatelessWidget {
             const Gap(10),
             Text(
               'What do you want to do today?',
-              style: context.textTheme.titleMedium,
+              style: context.textTheme.titleSmall,
               textAlign: TextAlign.center,
             ),
             const Gap(10),
             Text(
               'Tap + to add your tasks',
-              style: context.textTheme.bodyLarge?.copyWith(height: 2.5),
+              style: context.textTheme.bodyMedium?.copyWith(height: 2.5),
               textAlign: TextAlign.center,
             ),
           ],

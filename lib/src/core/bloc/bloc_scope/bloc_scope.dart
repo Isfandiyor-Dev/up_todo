@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:up_todo/src/core/bloc/theme_cubit/theme_cubit.dart';
 import 'package:up_todo/src/core/di/service_locator.dart';
+import 'package:up_todo/src/features/home/presentation/blocs/priority_cubit/priority_cubit.dart';
 import 'package:up_todo/src/features/onboarding/presentation/bloc/onboarding_cubit.dart';
 
 class BlocScope extends StatelessWidget {
@@ -17,6 +18,7 @@ class BlocScope extends StatelessWidget {
           create: (context) => getIt<ThemeCubit>()..loadCurrentTheme(),
         ),
         BlocProvider(create: (context) => getIt<OnboardingCubit>()),
+        BlocProvider(create: (context) => getIt<PriorityCubit>()),
       ],
       child: child,
     );

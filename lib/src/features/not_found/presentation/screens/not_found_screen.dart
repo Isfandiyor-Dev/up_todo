@@ -65,7 +65,7 @@ class NotFoundScreen extends StatelessWidget {
                 onPressed: () {
                   context.goNamed(
                     "intro",
-                  ); // TODO: If home is ready, it will redirect to "home"
+                  ); //! TODO: If home is ready, it will redirect to "home"
                 },
                 child: const Text(
                   "Find shelter",

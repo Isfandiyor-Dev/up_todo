@@ -1,0 +1,2 @@
+/home/isfandiyor/Документы/my_projects/up_todo/android/app/.cxx/Debug/m3u6wm4d/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/isfandiyor/Документы/my_projects/up_todo/android/app/.cxx/Debug/m3u6wm4d/armeabi-v7a/CMakeFiles/rebuild_cache.dir

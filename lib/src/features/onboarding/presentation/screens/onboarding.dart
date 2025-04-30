@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:up_todo/src/core/extensions/context/app_media_query_size_extension.dart';
 import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
 import 'package:up_todo/src/features/onboarding/presentation/bloc/onboarding_cubit.dart';
@@ -19,20 +20,6 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   final pageController = PageController();
-
-  Widget navItemRectangle(bool isCurrent) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 150),
-      width: 26.28,
-      height: isCurrent ? 5 : 4,
-      decoration: BoxDecoration(
-        color: isCurrent
-            ? Theme.of(context).colorScheme.primary
-            : Theme.of(context).colorScheme.secondaryFixed,
-        borderRadius: BorderRadius.circular(60),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,15 +54,15 @@ class _OnboardingState extends State<Onboarding> {
             ),
             Align(
               alignment: const Alignment(0, 0.17),
-              child: SizedBox(
-                width: 95,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    navItemRectangle(state.currentPage == 0),
-                    navItemRectangle(state.currentPage == 1),
-                    navItemRectangle(state.currentPage == 2),
-                  ],
+              child: SmoothPageIndicator(
+                controller: pageController,
+                count: 3,
+                effect: WormEffect(
+                  activeDotColor: context.colorScheme.primary,
+                  dotColor: context.colorScheme.secondaryFixed,
+                  radius: 70,
+                  dotHeight: 7,
+                  dotWidth: 25,
                 ),
               ),
             ),

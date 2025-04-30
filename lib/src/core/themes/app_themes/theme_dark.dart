@@ -8,31 +8,36 @@ class ThemeDark {
   ThemeDark._init();
 
   ThemeData get theme => ThemeData(
-        brightness: Brightness.dark,
         extensions: [AppAssets.dark],
         fontFamily: 'Lato',
         scaffoldBackgroundColor: const Color(0xff121212),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xFF363636),
         ),
-        colorSchemeSeed: const Color(0xFF8875FF),
+        appBarTheme: AppBarTheme(color: Colors.transparent),
         colorScheme: ColorScheme(
           brightness: Brightness.dark,
           primary: const Color(0xFF8875FF),
           onPrimary: Colors.white,
           secondary: const Color(0xFF363636),
-          onSecondary: Colors.white.withOpacity(0.87),
+          onSecondary: Colors.white.withValues(alpha: 0.87),
+          secondaryFixed: Colors.grey.shade500,
           error: const Color(0xFFFF4949),
-          onError: Colors.white.withOpacity(0.7),
+          onError: Colors.white.withValues(alpha: 0.7),
           surface: const Color(0xFF363636),
-          onSurface: Colors.white.withOpacity(0.87),
+          onSurface: Colors.white.withValues(alpha: 0.87),
           outline: const Color(0xFF8875FF),
           outlineVariant: const Color(0xFF979797),
           primaryContainer: const Color(0xFF272727),
           onPrimaryContainer: Colors.white,
           secondaryContainer: const Color(0xFF979797),
           onSecondaryContainer: Colors.white,
+          tertiary: const Color(0x95FFFFFF),
         ),
-        textTheme: AppTextStyles.getTextTheme(Colors.white.withOpacity(0.87)),
+        iconTheme: IconThemeData(color: const Color(0xEFFFFFFF)),
+        primaryIconTheme: IconThemeData(color: const Color(0xEFFFFFFF)),
+        textTheme: AppTextStyles.getTextTheme(
+          Colors.white.withValues(alpha: 0.87),
+        ),
       );
 }

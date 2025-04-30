@@ -6,6 +6,9 @@ import 'package:go_router/go_router.dart';
 import 'package:up_todo/src/core/extensions/context/app_media_query_size_extension.dart';
 import 'package:up_todo/src/core/extensions/context/app_text_theme_extension.dart';
 import 'package:up_todo/src/core/extensions/context/nav_bar_items_extension.dart';
+
+import '../../../home/presentation/widgets/add_task/add_task_bottom_sheet.dart';
+
 // import '../../../home/presentation/widgets/add_task/add_task_bottom_sheet.dart';
 
 class RootScreen extends StatefulWidget {
@@ -21,6 +24,8 @@ class _RootScreenState extends State<RootScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // key: scaffoldKey,
+      // drawer: const MyDrawer(),
       resizeToAvoidBottomInset: false,
       body: widget.navigationShell,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -29,11 +34,11 @@ class _RootScreenState extends State<RootScreen> {
         height: 65,
         child: FloatingActionButton(
           onPressed: () {
-            // showModalBottomSheet(
-            //   context: context,
-            //   isScrollControlled: true,
-            //   builder: (ctx) => MyAddTaskBottomSheet(),
-            // );
+            showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              builder: (ctx) => MyAddTaskBottomSheet(),
+            );
           },
           backgroundColor: const Color(0xff8687E7),
           shape: const CircleBorder(),
@@ -46,6 +51,7 @@ class _RootScreenState extends State<RootScreen> {
         // backgroundColor: const Color(0xff363636),
         backgroundColor:
             Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+        splashColor: context.colorScheme.tertiary,
         tabBuilder: (index, isActive) {
           return Column(
             mainAxisSize: MainAxisSize.min,

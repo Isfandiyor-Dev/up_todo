@@ -31,15 +31,14 @@ class SettingsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const Gap(20),
               Text(
                 "Settings",
                 style: context.textTheme.labelMedium?.copyWith(
-                  color: const Color(0xffAFAFAF),
                   height: 1.5,
                   fontSize: 14,
                 ),
               ),
-              const Gap(20),
               ListTile(
                 contentPadding: const EdgeInsets.only(right: 15),
                 leading: SvgPicture.asset(
@@ -57,9 +56,12 @@ class SettingsScreen extends StatelessWidget {
                     isExpanded: true,
                     underline: const SizedBox.shrink(),
                     value: state.currentThemeEnum,
-                    icon: const Padding(
+                    icon: Padding(
                       padding: EdgeInsets.only(right: 10),
-                      child: Icon(Icons.arrow_drop_down_rounded),
+                      child: Icon(
+                        Icons.arrow_drop_down_rounded,
+                        color: Theme.of(context).iconTheme.color,
+                      ),
                     ),
                     borderRadius: BorderRadius.circular(20),
                     style: context.textTheme.labelLarge,

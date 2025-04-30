@@ -15,18 +15,15 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
     super.initState();
-    _checkIsPassed();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkIsPassed();
+    });
   }
 
   Future<void> _checkIsPassed() async {
-    Future.delayed(
-      const Duration(seconds: 3),
-      () {
-        if (context.mounted) {
-          context.go("/onboarding");
-        }
-      },
-    );
+    await Future.delayed(const Duration(seconds: 3));
+    if (!mounted) return;
+    context.go("/onboarding");
   }
 
   @override

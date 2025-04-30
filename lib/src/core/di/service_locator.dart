@@ -4,6 +4,7 @@ import 'package:up_todo/src/core/bloc/theme_cubit/theme_cubit.dart';
 import 'package:up_todo/src/core/config/local_config.dart';
 import 'package:up_todo/src/core/routes/app_router.dart';
 
+import '../../features/home/home_di.dart';
 import '../../features/onboarding/onboarding_di.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -22,4 +23,5 @@ Future<void> setupDi() async {
 
   //*Features
   onboardingDi();
+  homeDi();
 }
